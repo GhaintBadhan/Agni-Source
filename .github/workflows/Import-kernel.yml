@@ -6,7 +6,7 @@ on:
       tag:
         description: Release tag that holds the zip
         required: true
-        default: source-import
+        default: Source-import
       asset:
         description: Zip file name attached to that release
         required: true
