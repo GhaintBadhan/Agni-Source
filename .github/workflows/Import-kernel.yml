@@ -10,7 +10,7 @@ on:
       asset:
         description: Zip file name attached to that release
         required: true
-        default: kernel.zip
+        default: Kernel.zip
 
 permissions:
   contents: write
