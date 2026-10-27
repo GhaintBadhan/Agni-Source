@@ -5,7 +5,7 @@ on:
     inputs:
       repo:
         description: "Kernel repo URL"
-        default: "https://github.com/GhaintBadhan/kernel_xiaomi_kangx"
+        default: "https://github.com/GhaintBadhan/Agni-Source"
       branch:
         description: "Branch"
         default: "main"
@@ -22,18 +22,18 @@ jobs:
         run: |
           cd kernel
           echo "=== Kconfig definitions of MACH_XIAOMI ==="
-          grep -rn "MACH_XIAOMI" --include='Kconfig*' . | head -40 || true
+          grep -rn "MIUI_OPTIMIZATIONS\|MIUI" --include='Kconfig*' . | head -40 || true
 
       - name: Search whole tree
         run: |
           cd kernel
           echo "=== Any CONFIG_MACH_XIAOMI reference ==="
-          grep -rn "CONFIG_MACH_XIAOMI" . 2>/dev/null | head -40 || true
+          grep -rn "MIUI_OPTIMIZATIONS\|MIUI" . 2>/dev/null | head -40 || true
 
       - name: Search defconfigs
         run: |
           cd kernel
           echo "=== In arch/arm64/configs ==="
-          grep -n "MACH_XIAOMI" arch/arm64/configs/*vili* 2>/dev/null | head -40 || true
+          grep -n "MIUI_OPTIMIZATIONS\|MIUI" arch/arm64/configs/*vili* 2>/dev/null | head -40 || true
           echo "=== Config files present ==="
           ls arch/arm64/configs | grep -i -E "vili|agni|xiaomi" || true
