@@ -5,7 +5,7 @@ on:
     inputs:
       repo:
         description: "Kernel repo URL"
-        default: "https://github.com/GhaintBadhan/Agni-Source"
+        default: "https://github.com/GhaintBadhan/kernel_xiaomi_kangx"
       branch:
         description: "Branch"
         default: "main"
